@@ -1,0 +1,290 @@
+#app {
+    position: relative;
+}
+
+div.chat-list {
+    width: 345px;
+    height: auto;
+    border: 1px solid var(--chat-strong-black);
+    border-radius: 15px;
+    box-shadow: 0px 5px 6px var(--chat-shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+div.chat-list div.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.chat-list div.header h2 {font-size: 18pt; display: flex; gap: 10px;}
+div.chat-list div.header h2 span {font-size: 18pt; font-weight: 800;}
+div.chat-list div.header h2 img.network {display: none;}
+
+div.action {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+div.action span {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--chat-white);
+}
+div.action span:hover {
+    cursor: pointer;
+    background-color: var(--chat-soft-white);
+}
+div.action span img {
+width: 90%;
+height: 90%;
+object-fit: cover;
+}
+
+div.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--chat-soft-white);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+div.search img {
+    width: 22px;
+    height: 28px;
+}
+
+div.search input {
+    border: none;
+    background-color: transparent;
+    font-size: 11pt;
+    flex: 1;
+    outline: none;
+    padding-left: 5px;
+}
+
+div.chat-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 485px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+div.chat-list ul > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 7px;
+    position: relative;
+    background-color: var(--chat-white);
+    border-radius: 4px;
+}
+div.chat-list ul > li > div.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--chat-soft-black);
+}
+div.chat-list ul > li > div.avatar h2 {
+    color: var(--chat-black);
+    font-size: 13pt;
+    font-weight: bolder;
+}
+div.chat-list ul > li > div.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+div.chat-list ul > li > div.content h4 {
+    font-size: 12pt;
+    color: var(--chat-black);
+}
+div.chat-list ul > li > div.content p {
+    font-size: 10pt;
+    color: var(--chat-strong-black);
+    line-height: 12pt;
+}  
+
+div.chat-list ul > li:hover {
+    cursor: pointer;
+    background-color: var(--chat-soft-white);
+}
+
+div.chat-list ul > li:hover div.delete {
+    display: flex;
+}
+
+div.chat-list ul > li > div.delete {
+    display: none;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: var(--chat-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right: 20px;
+    border: 1px solid var(--chat-soft-black);
+    box-shadow: 0px 2px 2px var(--chat-shadow);
+}
+
+div.chat-list ul > li > div.delete img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+}
+
+div.chat-list ul > li:hover div.edit {
+    display: flex;
+}
+
+div.chat-list ul > li > div.edit {
+    display: none;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: var(--chat-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right: 60px;
+    border: 1px solid var(--chat-soft-black);
+    box-shadow: 0px 2px 2px var(--chat-shadow);
+}
+
+div.chat-list ul > li > div.edit img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+}
+
+
+div.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--chat-overlay);
+    backdrop-filter: blur(1px);
+}
+
+div.add-chat {
+    position: absolute;
+    background-color: var(--chat-white);
+    padding: 20px;
+    border: 2px solid var(--chat-soft-black);
+    z-index: 2;
+    box-shadow: 0px 5px 6px var(--chat-shadow);
+    width: 370px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    top: 20%;
+    left: -13px;
+}
+
+div.add-chat div.ac-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+div.add-chat div.ac-header h2 {font-size: 13pt;}
+
+div.add-chat div.ac-header span {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--chat-white);
+}
+
+div.add-chat div.ac-header span:hover {
+    cursor: pointer;
+    background-color: var(--chat-soft-white);
+}
+div.add-chat div.ac-header span img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+div.add-chat div.ac-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+div.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+div.form-field p {
+    font-size: 10pt;
+    color: var(--chat-black);
+}
+div.form-field input {
+    border: 1px solid var(--chat-strong-black);
+    padding: 6px;
+    outline: none;
+    background-color: var(--chat-soft-white);
+    border-radius: 4px;
+    font-size: 11pt;
+}
+
+div.add-chat div.action {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5px;
+}
+div.btn-primary {
+    padding: 5px 15px;
+    display: block;
+    background-color: var(--chat-primary-button);
+    color: var(--chat-white);
+    letter-spacing: 0.25px;
+    font-size: 10pt;
+    border-radius: 16px;
+    cursor: pointer;
+}
+div.btn-secondary {
+    padding: 5px 15px;
+    display: block;
+    background-color: var(--chat-soft-black);
+    color: var(--chat-black);
+    letter-spacing: 0.25px;
+    font-size: 10pt;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.__error {
+    border: 1px solid red !important;
+    background-color: #ff000033 !important;
+}
