@@ -2,8 +2,16 @@ let LocalStorage = window.localStorage;
 
 // get chat list user from local storage
 export const GetChatList = () => {
-    let list = LocalStorage.getItem('chat-list-users');
-    return JSON.parse(list);
+    // let list = LocalStorage.getItem('chat-list-users');
+    // return JSON.parse(list);
+    //  return Array.isArray(list) ? list : [];
+        let list = window.localStorage.getItem('chat-list-users');
+    try {
+        let parsed = JSON.parse(list);
+        return Array.isArray(parsed) ? parsed : [];
+    } catch {
+        return [];
+    }
 }
 
 /**

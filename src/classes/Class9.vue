@@ -16,7 +16,7 @@
     let SearchKeyword = '';
 
     // chat list user data
-    let ChatListUsers = ref(GetChatList());
+    let ChatListUsers = ref(GetChatList() || []);
 
     // dark and light theme
     const UpdateTheme = () => {
